@@ -1,0 +1,38 @@
+RewriteEngine On
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Controlador para ir al inicio
+RewriteRule ^inici/?$ controllers/routes_controller.php?action=inici [L]
+
+# Controlador para ir al formulario de registro
+
+RewriteRule ^crear_cuenta/?$ controllers/routes_controller.php?action=crear_cuenta [L]
+# Controlador para registrar a un usuario
+RewriteRule ^procesar_registro/?$ controllers/routes_controller.php?action=procesar_registro [L]
+
+# Controlador para loguearse
+RewriteRule ^login/?$ controllers/routes_controller.php?action=login [L]
+# Controlador logueado
+RewriteRule ^logueado/?$ controllers/routes_controller.php?action=logueado [L]
+# Controlador cierre de sesion
+RewriteRule ^logout/?$ controllers/routes_controller.php?action=logout [L]
+# Controlador Verificacion Usuario por correo
+RewriteRule ^verificar_usuario/?$ controllers/routes_controller.php?action=verificar_usuario [L]
+# Controlador correo exitoso
+RewriteRule ^correo_exitoso/?$ controllers/routes_controller.php?action=correo_exitoso [L]
+# Controlador correo erroneo
+RewriteRule ^correo_erroneo/?$ controllers/routes_controller.php?action=correo_erroneo [L]
+# Controlador usuario existente
+RewriteRule ^usuario_existe/?$ controllers/routes_controller.php?action=usuario_existe [L]
+# Controlador actualización de perfil
+RewriteRule ^ver_perfil/?$ controllers/routes_controller.php?action=ver_perfil [L]
+
+#Para evitar que incrusten la web en sitios sin consentimiento.
+Header always set X-Frame-Options "DENY"
+#Evita que el navegador ejecute contenido en segundo plano
+Header always set X-Content-Type-Options "nosniff"
+
+

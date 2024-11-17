@@ -1,0 +1,57 @@
+<article class="registro-container">
+    <h2>Crear Cuenta</h2>
+    <form action="procesar_registro" id="registroForm" method="post">
+        <!-- Nombre de usuario -->
+        <label for="nombre">Nombre de usuario:</label>
+        <input type="text" id="nombre" name="nombre" required class="form-control">
+
+        <!-- Correo electrónico -->
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" name="correo" required class="form-control">
+
+        <!-- Contraseña -->
+        <label for="contrasena">Contraseña:</label>
+        <div class="input-group">
+            <input type="password" id="contrasena" name="contrasena" required class="form-control">
+            <span id="togglePassword" class="input-group-text" style="cursor: pointer;">👁️</span>
+        </div>
+        <div id="passwordHelp" style="color: red;"></div> <!-- Aquí está el mensaje de ayuda para la contraseña -->
+        <!-- Aquí agregamos la lista de requisitos de la contraseña -->
+        <ul id="passwordRequirements">
+            <li id="lengthRequirement" style="color: red;">Al menos 8 caracteres</li>
+            <li id="uppercaseRequirement" style="color: red;">Al menos 1 letra mayúscula</li>
+            <li id="lowercaseRequirement" style="color: red;">Al menos 1 letra minúscula</li>
+            <li id="numberRequirement" style="color: red;">Al menos 1 número</li>
+            <li id="specialCharRequirement" style="color: red;">Al menos 1 carácter especial (!@#$%^&*)</li>
+            <li id="noConsecutiveRequirement" style="color: red;">No más de 2 caracteres iguales consecutivos</li>
+            <li id="noSequenceRequirement" style="color: red;">No secuencias numéricas o alfabéticas consecutivas (e.g.,
+                123, abc)</li>
+        </ul>
+
+        <ul id="confirmPasswordRequirements">
+            <li id="confirmPasswordHelp" style="color: red;">Las contraseñas no coinciden.</li>
+        </ul>
+
+        <!-- Repetir contraseña -->
+        <label for="confirm_password">Repetir contraseña:</label>
+        <div class="input-group">
+            <input type="password" id="confirm_password" name="confirm_password" required class="form-control">
+            <span id="toggleConfirmPassword" class="input-group-text" style="cursor: pointer;">👁️</span>
+        </div>
+
+        <label for="rol">Rol:</label>
+        <select id="rol" name="rol" class="form-control" required>
+            <option value="">Seleccione un rol</option>
+            <?php if (!empty($roles)): ?>
+                <?php foreach ($roles as $rol): ?>
+                    <option value="<?= htmlspecialchars($rol['id']) ?>"><?= htmlspecialchars($rol['nombre']) ?></option>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <option value="">No hay roles disponibles</option>
+            <?php endif; ?>
+        </select>
+
+        <!-- Botón de registro -->
+        <button type="submit" class="btn btn-primary button.btn_registro">Crear Cuenta</button>
+    </form>
+</article>

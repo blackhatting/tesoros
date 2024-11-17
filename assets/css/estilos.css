@@ -1,0 +1,377 @@
+/* Estilos Generales */
+body {
+  background-color: rgb(202, 202, 244);
+  margin: 0;
+  padding: 0;
+  font-family: "Afacad Flux", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: italic;
+
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los contenedores se ajusten en pantallas pequeñas */
+  width: 100%;
+}
+
+/* Estilos para el texto y los títulos */
+.texto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20vh;
+  text-align: center;
+  padding: 20px;
+}
+
+
+h1 {
+  margin: 0;
+  font-size: 2.5em;
+  font-family: "Afacad Flux", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: italic;
+}
+h2{
+  font-weight: bold;
+}
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  h1 {
+      font-size: 2em; /* Tamaño de fuente más pequeño en pantallas pequeñas */
+  }
+}
+
+/* Container 1 - fondo de imagen */
+.login-container1 {
+  flex: 0 1 40%; /* En pantallas grandes ocupa el 40% del ancho */
+  background-image: url("../../assets/img/fondos/generaciones.jpg");
+  background-position: center;
+  background-size: cover;
+  border-radius: 8px;
+  min-height: 100vh; /* Mantener lleno en pantallas grandes */
+  margin-top: 56px;
+}
+
+/* Container 2 - formulario */
+.login-container2 {
+  flex: 0 1 60%; /* En pantallas grandes ocupa el 60% del ancho */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin: auto;
+  box-shadow: 12px 2px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Mantener lleno en pantallas grandes */
+  margin-top: 56px;
+}
+
+/* Estilos Responsivos para pantallas medianas y pequeñas (móviles) */
+@media (max-width: 768px) {
+  main {
+      flex-direction: column; /* Apila los contenedores uno encima del otro */
+  }
+
+  .login-container1 {
+      flex: 0 1 100%; /* Se reduce al 100% en móviles */
+      height: 200px; /* Limitar altura en móviles */
+      margin-top: 20px; /* Añadir separación entre contenedores */
+  }
+
+  .login-container2 {
+      flex: 0 1 100%; /* Ocupa todo el ancho en móviles */
+      padding: 20px;
+      margin-top: 20px;
+      min-height: auto; /* Ajustar la altura según el contenido */
+  }
+  .profile-container {
+    flex-direction: column;
+}
+
+.sidebar, .right-sidebar {
+    width: 100%;
+}
+
+.main-content {
+    width: 100%;
+}
+}
+
+/* Ajustes adicionales para pantallas muy pequeñas (móviles pequeños) */
+@media (max-width: 576px) {
+  .login-container2 {
+      padding: 15px; /* Reducir padding en pantallas pequeñas */
+  }
+
+  .login-container1 {
+      height: 150px; /* Aún más pequeño en pantallas muy pequeñas */
+  }
+}
+
+/* Estilos adicionales */
+.loguearse {
+  background-color: aqua;
+  height: 300px;
+  width: 100%;
+}
+
+.create-account {
+  margin: 0 auto;
+  width: 35%;
+  text-align: center;
+}
+
+/* Página de verificación */
+.verificacion {
+  text-align: center;
+}
+
+/* Footer */
+.pie {
+  text-align: center;
+}
+
+/* Contenedores de registro */
+.containerRegistro_erroneo {
+  text-align: center;
+  color: red;
+}
+
+.containerRegistro_exito {
+  text-align: center;
+  color: green;
+}
+
+/* Ajustes para el contenedor de registro */
+.registro-container {
+  padding: 20px; /* Espacio interno en el contenedor */
+}
+
+/* Ajustes para los inputs y selects */
+input.form-control, select.form-control {
+  width: 100%; /* Asegura que el input ocupe el 100% del ancho */
+  padding: 10px; /* Añade más espacio interno */
+  margin: 10px 0; /* Añade espacio entre los inputs */
+  border-radius: 5px; /* Bordes redondeados */
+  border: 1px solid #ccc; /* Borde más visible */
+  font-size: 16px; /* Aumenta el tamaño de la fuente */
+}
+
+/* Ajustes para los grupos de input */
+.input-group {
+  width: 100%; /* Asegura que el grupo de inputs ocupe el 100% del ancho */
+}
+
+/* Espaciado para el botón */
+button.btn {
+  width: 100%; /* Botón ocupa todo el ancho */
+  padding: 10px; /* Espacio interno en el botón */
+  font-size: 16px; /* Aumenta el tamaño de la fuente del botón */
+}
+/* Ajustes para el grupo de input con el span */
+.input-group {
+  display: flex; /* Usar flexbox para alinear correctamente los elementos */
+  align-items: center; /* Alinear verticalmente en el centro */
+  width: 100%; /* Asegura que el grupo ocupe el 100% del ancho */
+}
+
+/* Ajustes específicos para el span */
+.input-group .input-group-text {
+  height: 100%; /* Que el span tenga la misma altura que el input */
+  padding: 10px; /* Asegura que el padding sea igual al del input */
+  font-size: 16px; /* Asegura que el tamaño de la fuente sea igual */
+  cursor: pointer; /* Cambiar el cursor al pasar sobre el span */
+}
+.form_loguin, .btn_inicio{
+  width: 80%;
+}
+.btn-info{
+  width: 100%;
+}
+.boton_lupa{
+  border: none;
+  padding: 0%;
+  background: none;
+}
+
+
+/*
+
+iconos menu
+
+*/
+
+/* Posiciona el tooltip respecto al icono */
+.icon-btn {
+  position: relative;
+}
+
+.tooltip {
+  position: absolute;
+  top: 100%; /* Muestra el tooltip sobre el icono */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333; /* Fondo oscuro */
+  color: #fff; /* Texto blanco */
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap; /* Evitar que el texto se rompa */
+  opacity: 0; /* Empieza invisible */
+  pointer-events: none; /* El tooltip no interfiere con el ratón */
+  transition: opacity 0.3s ease-in-out;
+  visibility:hidden;
+  
+}
+
+/* Mostrar el tooltip cuando el mouse está sobre el icono */
+.icon-btn:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+/*
+==================================================================
+CONTENEDORES PARA LA ACTUALIZACIÓN DEL PERFIL
+==================================================================
+*/
+.profile-container {
+  display: flex;
+  margin: 20px;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 15px;
+  width: 300px; /* Ajusta según sea necesario */
+}
+
+.sidebar {
+  flex: 1; /* Ocupar espacio proporcionalmente */
+}
+
+.content {
+  flex: 2; /* Ocupar más espacio que el menú */
+  margin-left: 20px; /* Espacio entre menú y contenido */
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  cursor: pointer;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.2s;
+}
+
+.menu li:hover {
+  background-color: #f0f0f0; /* Cambia el color al pasar el mouse */
+}
+
+.section {
+  display: none; /* Ocultar secciones por defecto */
+}
+
+.section.active {
+  display: block; /* Mostrar solo la sección activa */
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+/*
+================================================================
+Estilos boton
+================================================================
+*/
+/* Estilos para el botón y el menú */
+.profile-container {
+  display: flex;
+}
+
+.sidebar {
+  width: 250px;
+}
+
+.content {
+  flex-grow: 1;
+  padding-left: 20px;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.form-group input {
+  flex-grow: 1;
+}
+
+.input-with-menu {
+  position: relative;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.menu-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 0 10px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}

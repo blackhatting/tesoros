@@ -1,0 +1,150 @@
+<div class="profile-container">
+    <div class="card sidebar">
+        <h3>Mi Perfil</h3>
+        <ul class="menu">
+            <li onclick="mostrarSeccion('informacionGeneral')">Información General</li>
+            <li onclick="mostrarSeccion('empleoFormacion')">Empleo y Formación</li>
+            <li onclick="mostrarSeccion('lugaresResidencia')">Lugares de Residencia</li>
+            <li onclick="mostrarSeccion('infoContacto')">Información Básica y de Contacto</li>
+            <li onclick="mostrarSeccion('familiaRelaciones')">Familia y Relaciones</li>
+            <li onclick="mostrarSeccion('informacionSobreTi')">Información Sobre Ti</li>
+            <li onclick="mostrarSeccion('acontecimientosImportantes')">Acontecimientos Importantes</li>
+        </ul>
+    </div>
+
+    <div class="card content">
+        <!-- Información General -->
+        <div id="informacionGeneral" class="section active">
+            <h2>Información General</h2>
+            <?php
+            if (isset($empleosConPrivacidad) && !empty($empleosConPrivacidad)) {
+                foreach ($empleosConPrivacidad as $empleo) {
+                    ?>
+                    <div class="form-group input-with-menu">
+                        <label for="empleo"><img src="assets/img/iconos/maletin.png"></label>
+                        <input type="text" id="empleo" name="empleo" value="<?php echo htmlspecialchars($empleo['trabajo']); ?>"
+                            readonly>
+                        <div class="privacidad">
+                            <img src="<?php echo htmlspecialchars($empleo['private_img']); ?>" alt="Privacidad">
+                        </div>
+                    </div>
+                <?php }
+            }
+            ?>
+
+            <div class="dropdown">
+                <button class="menu-button">⋮</button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="actualizarCampo('empleo')">Actualizar Empleo</a>
+                    <a href="#" onclick="eliminarCampo('empleo')">Eliminar Empleo</a>
+                    <a href="#" onclick="cambiarPrivacidad('empleo')">Cambiar Privacidad</a>
+                </div>
+            </div>
+        </div>
+
+        <?php
+        if (isset($formacionConPrivacidad) && !empty($formacionConPrivacidad)) {
+            foreach ($formacionConPrivacidad as $formacion) {
+                ?>
+                <div class="form-group input-with-menu">
+                    <label for="formacion"><img src="assets/img/iconos/alumno.png"></label>
+                    <input type="text" id="formacion" name="formacion"
+                        value="<?php echo htmlspecialchars($formacion['estudios']); ?>" readonly>
+                    <div class="privacidad">
+                        <img src="<?php echo htmlspecialchars($formacion['private_img']); ?>" alt="Privacidad">
+                    </div>
+                </div>
+            <?php }
+        }
+        ?>
+
+        <div class="dropdown">
+            <button class="menu-button">⋮</button>
+            <div class="dropdown-content">
+                <a href="#" onclick="actualizarCampo('formacion')">Actualizar Formación</a>
+                <a href="#" onclick="eliminarCampo('formacion')">Eliminar Formación</a>
+                <a href="#" onclick="cambiarPrivacidad('formacion')">Cambiar Privacidad</a>
+            </div>
+        </div>
+
+
+        <?php if ($ubicacionConPrivacidad && isset($ubicacionConPrivacidad['pais'])): ?>
+            <div class="form-group input-with-menu">
+                <label for="ubicacion"><img src="assets/img/iconos/ubicacion.png"></label>
+                <input type="text" id="ubicacion" name="ubicacion"
+                    value="<?php echo htmlspecialchars($ubicacionConPrivacidad['pais']); ?>" readonly>
+                <div class="privacidad">
+                    <img src="<?php echo htmlspecialchars($ubicacionConPrivacidad['private_img']); ?>" alt="Privacidad">
+                </div>
+            </div>
+        <?php else: ?>
+            <p>No hay datos de ubicación disponibles.</p>
+        <?php endif; ?>
+        <div class="dropdown">
+            <button class="menu-button">⋮</button>
+            <div class="dropdown-content">
+                <a href="#" onclick="actualizarCampo('ubicacion')">Actualizar Ubicación</a>
+                <a href="#" onclick="eliminarCampo('ubicacion')">Eliminar Ubicación</a>
+                <a href="#" onclick="cambiarPrivacidad('ubicacion')">Cambiar Privacidad</a>
+            </div>
+        </div>
+
+
+        <?php
+        if (isset($estadoCivilConPrivacidad) && !empty($estadoCivilConPrivacidad)) {
+            ?>
+            <div class="form-group input-with-menu">
+                <label for="estado_civil"><img src="assets/img/iconos/corazon.png"></label>
+                <input type="text" id="estado_civil" name="estado_civil"
+                    value="<?php echo htmlspecialchars($estadoCivilConPrivacidad['estado']); ?>" readonly>
+                <div class="privacidad">
+                    <img src="<?php echo htmlspecialchars($estadoCivilConPrivacidad['private_img']); ?>" alt="Privacidad">
+                </div>
+            </div>
+        <?php } ?>
+
+        <div class="dropdown">
+            <button class="menu-button">⋮</button>
+            <div class="dropdown-content">
+                <a href="#" onclick="actualizarCampo('estado_civil')">Actualizar Estado Civil</a>
+                <a href="#" onclick="eliminarCampo('estado_civil')">Eliminar Estado Civil</a>
+                <a href="#" onclick="cambiarPrivacidad('estado_civil')">Cambiar Privacidad</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Empleo y formación -->
+<div id="empleoFormacion" class="section">
+    <h2>Empleo y Formación</h2>
+    <!-- Contenido de Empleo y Formación -->
+</div>
+<div id="lugaresResidencia" class="section">
+    <h2>Lugares de Residencia</h2>
+    <!-- Contenido de Lugares de Residencia -->
+</div>
+
+<div id="infoContacto" class="section">
+    <h2>Información Básica y de Contacto</h2>
+    <!-- Contenido de Información de Contacto -->
+</div>
+
+<div id="familiaRelaciones" class="section">
+    <h2>Familia y Relaciones</h2>
+    <!-- Contenido de Familia y Relaciones -->
+</div>
+
+<div id="informacionSobreTi" class="section">
+    <h2>Información Sobre Ti</h2>
+    <!-- Contenido de Información Sobre Ti -->
+</div>
+
+<div id="acontecimientosImportantes" class="section">
+    <h2>Acontecimientos Importantes</h2>
+    <!-- Contenido de Acontecimientos Importantes -->
+</div>
+
+</div>
+
+
+</div>

@@ -1,0 +1,49 @@
+<aside>
+    <div class="cabecera">
+        <div class="imagen">
+            <img src="assets/img/logo/tesoros_logo.png">
+        </div>
+        <div class="texto">
+        <h1>Conectando Historias, Uniendo Generaciones</h1>
+        </div>
+    </div>
+</aside>
+<main>
+
+    <article class="login-container1">
+        <!-- Aquí puedes añadir cualquier otro contenido que desees -->
+    </article>
+
+    <article class="login-container2">
+        <h2 class="texto">Iniciar Sesión</h2>
+
+        <?php if (isset($error)): ?>
+            <div class="alert alert-danger">
+                <?= htmlspecialchars($error) ?> <!-- Mensaje de error si el login falla -->
+            </div>
+        <?php endif; ?>
+
+        <form action="login" method="post" class="form_loguin"> <!-- Añadido margen inferior al formulario -->
+            <div class="mb-3"> <!-- Añadido un contenedor para el campo de usuario -->
+                <label for="nombre" class="form-label">Usuario:</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
+            </div>
+
+            <div class="mb-3"> <!-- Añadido un contenedor para el campo de contraseña -->
+                <label for="contrasena" class="form-label">Contraseña:</label>
+                <input type="password" id="contrasena" class="form-control" id="contrasena" name="contrasena" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn_inicio">Iniciar Sesión</button>
+        </form>
+
+        <div class="create-account mb-4 cre">
+            <p>¿No tienes una cuenta?<br>
+                <a href="crear_cuenta" class="btn btn-info">Crea tu cuenta</a>
+            </p>
+        </div>
+    </article>
+
+
+
+</main>

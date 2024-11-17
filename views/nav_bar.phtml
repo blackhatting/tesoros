@@ -1,0 +1,73 @@
+<?php if (isset($_SESSION['usuario_id'])): ?>
+  <nav id="navbarContainer" class="navbar navbar-expand-lg navbar-light bg-light navegador">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="logueado"><img src="assets/img/logo/tesoros_logo.png"
+          alt="Logotipo Tesoros del tiempo"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <!-- Sección Historias -->
+          <li class="nav-item icon-btn">
+            <a class="nav-link active" aria-current="page" href="/historia" id="historiaIcon">
+              <img src="assets/img/iconos/historia.gif" alt="Historia" class="icono">
+              <span class="tooltip">Historia</span>
+            </a>
+          </li>
+
+          <!-- Sección Recetas -->
+          <li class="nav-item icon-btn">
+            <a class="nav-link active" aria-current="page" href="/recetas">
+              <img src="assets/img/iconos/receta.gif" alt="Recetas">
+              <span class="tooltip">Recetas</span>
+            </a>
+          </li>
+          <!-- Sección Eventos -->
+          <li class="nav-item icon-btn">
+            <a class="nav-link active" aria-current="page" href="/eventos">
+              <img src="assets/img/iconos/evento.gif" alt="Eventos">
+              <span class="tooltip">Eventos</span>
+            </a>
+          </li>
+          <!-- Sección Línea de Tiempo -->
+          <li class="nav-item icon-btn">
+            <a class="nav-link active" aria-current="page" href="/Linea_tiempo">
+              <img src="assets/img/iconos/tiempo.gif" alt="Linea temporal">
+              <span class="tooltip">Línea de Tiempo</span>
+            </a>
+          </li>
+          <!-- Menú desplegable de Perfil -->
+          <li class="nav-item dropdown icon-btn">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="assets/img/iconos/perfil.gif" alt="Perfil" data-bs-toggle="tooltip" title="Perfil"> <!-- Tooltip aquí -->
+        <span class="tooltip">Perfil</span>
+    </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="ver_perfil">Mi Perfil</a></li>
+              <li><a class="dropdown-item" href="/subir-historia">Subir Historia</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li class="text-center">
+                <a class="btn btn-danger" href="logout">Cerrar Sesión</a>
+              </li>
+            </ul>
+            <!-- Barra de búsqueda de usuarios -->
+          <li class="nav-item">
+            <form class="d-flex" action="/buscar-usuario" method="GET">
+              <input class="form-control me-2" type="search" name="query" placeholder="Buscar usuarios..."
+                aria-label="Buscar">
+              <button type="submit" class="boton_lupa">
+                <img src="assets/img/iconos/lupa.png" alt="Buscar">
+              </button>
+            </form>
+          </li>
+
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<?php endif; ?>
