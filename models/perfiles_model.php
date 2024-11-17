@@ -44,15 +44,15 @@ class PerfilesModel extends Database
         return $stmt->rowCount() > 0; // Retorna true si está bloqueado
     }
 
-    public function obtenerDatosUsuario($usuario_id)
+    public function obtenerDatosUsuario($usuario_id)//OK FUNCIONANDO
     {
         try {
             $query = "
             SELECT u.id, e.trabajo, f.estudios, c.estado
             FROM usuarios u
-            INNER JOIN empleos e ON u.empleo_id = e.id
-            INNER JOIN formacion f ON u.formacion_id = f.id
-            INNER JOIN estado_civil c ON u.estadocivil_id = c.id
+            LEFT JOIN empleos e ON u.empleo_id = e.id
+            LEFT JOIN formacion f ON u.formacion_id = f.id
+            LEFT JOIN estado_civil c ON u.estadocivil_id = c.id
             WHERE u.id = :usuario_id
         ";
 
@@ -66,7 +66,7 @@ class PerfilesModel extends Database
             return null; // O manejar el error de otra manera
         }
     }
-    public function obtenerEmpleoConPrivacidad($usuario_id)
+    public function obtenerEmpleoConPrivacidad($usuario_id) //OK FUNCIONANDO
     {
         // Obtener los empleos y la privacidad relacionada
         $sql = "SELECT e.trabajo, 
@@ -82,7 +82,7 @@ class PerfilesModel extends Database
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-    public function obtenerFormacionConPrivacidad($usuario_id)
+    public function obtenerFormacionConPrivacidad($usuario_id)//OK FUNCIONANDO
     {
         $sql = "SELECT f.estudios, 
                    p.privacidad, 
@@ -121,8 +121,8 @@ class PerfilesModel extends Database
         p.privacidad, 
         p.private_img
         FROM ubicacion u
-        INNER JOIN privacidad p ON u.privacidad_id = p.id
-            WHERE u.usuarios_id = :usuarios_id";
+        LEFT JOIN privacidad p ON u.privacidad_id = p.id
+        WHERE u.usuarios_id = :usuarios_id";
 
         $stmt = $this->conn->prepare($sql);
         $stmt->bindParam(':usuarios_id', $usuario_id, PDO::PARAM_INT);

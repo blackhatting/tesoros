@@ -281,14 +281,33 @@ CONTENEDORES PARA LA ACTUALIZACIÓN DEL PERFIL
 .menu li:hover {
   background-color: #f0f0f0; /* Cambia el color al pasar el mouse */
 }
-
+/*
 .section {
-  display: none; /* Ocultar secciones por defecto */
+  display: none;  Ocultar secciones por defecto 
+}
+*/
+/*
+.section.active {
+  display: block; /* Mostrar solo la sección activa 
+}
+*/
+/*
+=========================================================================
+PER ACTUALITZAR SEGONS FUNCIONI
+=========================================================================
+
+*/
+.section {
+  display: none;
+  flex-direction: column;
+  width: 100%;
 }
 
 .section.active {
-  display: block; /* Mostrar solo la sección activa */
+  display: block;
 }
+
+
 
 .form-group {
   margin-bottom: 15px;

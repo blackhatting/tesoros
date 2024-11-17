@@ -1,4 +1,7 @@
+
+
 <div class="profile-container">
+
     <div class="card sidebar">
         <h3>Mi Perfil</h3>
         <ul class="menu">
@@ -30,6 +33,7 @@
                     </div>
                 <?php }
             }
+            
             ?>
 
             <div class="dropdown">
@@ -68,51 +72,81 @@
         </div>
 
 
-        <?php if ($ubicacionConPrivacidad && isset($ubicacionConPrivacidad['pais'])): ?>
-            <div class="form-group input-with-menu">
-                <label for="ubicacion"><img src="assets/img/iconos/ubicacion.png"></label>
-                <input type="text" id="ubicacion" name="ubicacion"
-                    value="<?php echo htmlspecialchars($ubicacionConPrivacidad['pais']); ?>" readonly>
-                <div class="privacidad">
-                    <img src="<?php echo htmlspecialchars($ubicacionConPrivacidad['private_img']); ?>" alt="Privacidad">
-                </div>
-            </div>
-        <?php else: ?>
-            <p>No hay datos de ubicación disponibles.</p>
-        <?php endif; ?>
-        <div class="dropdown">
-            <button class="menu-button">⋮</button>
-            <div class="dropdown-content">
-                <a href="#" onclick="actualizarCampo('ubicacion')">Actualizar Ubicación</a>
-                <a href="#" onclick="eliminarCampo('ubicacion')">Eliminar Ubicación</a>
-                <a href="#" onclick="cambiarPrivacidad('ubicacion')">Cambiar Privacidad</a>
-            </div>
-        </div>
-
-
         <?php
-        if (isset($estadoCivilConPrivacidad) && !empty($estadoCivilConPrivacidad)) {
-            ?>
-            <div class="form-group input-with-menu">
-                <label for="estado_civil"><img src="assets/img/iconos/corazon.png"></label>
-                <input type="text" id="estado_civil" name="estado_civil"
-                    value="<?php echo htmlspecialchars($estadoCivilConPrivacidad['estado']); ?>" readonly>
-                <div class="privacidad">
-                    <img src="<?php echo htmlspecialchars($estadoCivilConPrivacidad['private_img']); ?>" alt="Privacidad">
-                </div>
-            </div>
-        <?php } ?>
-
-        <div class="dropdown">
-            <button class="menu-button">⋮</button>
-            <div class="dropdown-content">
-                <a href="#" onclick="actualizarCampo('estado_civil')">Actualizar Estado Civil</a>
-                <a href="#" onclick="eliminarCampo('estado_civil')">Eliminar Estado Civil</a>
-                <a href="#" onclick="cambiarPrivacidad('estado_civil')">Cambiar Privacidad</a>
+if (isset($ubicacionConPrivacidad) && !empty($ubicacionConPrivacidad)) {
+    foreach ($ubicacionConPrivacidad as $ubicacion) {
+        ?>
+        <div class="form-group input-with-menu">
+            <label for="ubicacion"><img src="assets/img/iconos/ubicacion.png" alt="Ubicación"></label>
+            <input type="text" id="ubicacion" name="ubicacion"
+                value="<?php echo htmlspecialchars($ubicacion['pais']); ?>" readonly>
+            <div class="privacidad">
+                <img src="<?php echo htmlspecialchars($ubicacion['private_img']); ?>" alt="Privacidad">
             </div>
         </div>
+    <?php }
+}
+?>
+
+<div class="dropdown">
+    <button class="menu-button">⋮</button>
+    <div class="dropdown-content">
+        <a href="#" onclick="actualizarCampo('ubicacion')">Actualizar Ubicación</a>
+        <a href="#" onclick="eliminarCampo('ubicacion')">Eliminar Ubicación</a>
+        <a href="#" onclick="cambiarPrivacidad('ubicacion')">Cambiar Privacidad</a>
     </div>
 </div>
+
+
+<?php
+            if (isset($empleosConPrivacidad) && !empty($empleosConPrivacidad)) {
+                foreach ($empleosConPrivacidad as $empleo) {
+                    ?>
+                    <div class="form-group input-with-menu">
+                        <label for="empleo"><img src="assets/img/iconos/maletin.png"></label>
+                        <input type="text" id="empleo" name="empleo" value="<?php echo htmlspecialchars($empleo['trabajo']); ?>"
+                            readonly>
+                        <div class="privacidad">
+                            <img src="<?php echo htmlspecialchars($empleo['private_img']); ?>" alt="Privacidad">
+                        </div>
+                    </div>
+                <?php }
+            }
+            
+            ?>
+
+            <div class="dropdown">
+                <button class="menu-button">⋮</button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="actualizarCampo('empleo')">Actualizar Empleo</a>
+                    <a href="#" onclick="eliminarCampo('empleo')">Eliminar Empleo</a>
+                    <a href="#" onclick="cambiarPrivacidad('empleo')">Cambiar Privacidad</a>
+                </div>
+            </div>
+        </div>
+
+
+
+<?php
+if (isset($estadoCivilConPrivacidad) && !empty($estadoCivilConPrivacidad)) {
+    ?>
+    <div class="form-group input-with-menu">
+        <label for="estado_civil"><img src="assets/img/iconos/corazon.png"></label>
+        <input type="text" id="estado_civil" name="estado_civil"
+            value="<?php echo htmlspecialchars($estadoCivilConPrivacidad['estado']); ?>" readonly>
+        <div class="privacidad">
+            <img src="<?php echo htmlspecialchars($estadoCivilConPrivacidad['private_img']); ?>" alt="Privacidad">
+        </div>
+    </div>
+    <?php
+} else {
+    echo "<p>No hay información de estado civil disponible.</p>";
+}
+
+?>
+
+
+
 
 <!-- Empleo y formación -->
 <div id="empleoFormacion" class="section">

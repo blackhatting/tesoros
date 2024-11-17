@@ -163,37 +163,37 @@ switch ($action) {
     ============================================
     */
     case 'ver_perfil':
-        // Asegúrate de que el usuario esté logueado
         if (isset($_SESSION['usuario_id'])) {
             $usuario_id = $_SESSION['usuario_id'];
     
             // Obtener los datos del usuario desde el modelo
             $datos_usuario = $perfilesModel->obtenerDatosUsuario($usuario_id);
+            
     
             // Obtener empleos con privacidad
             $empleosConPrivacidad = $perfilesModel->obtenerEmpleoConPrivacidad($usuario_id);
-            
+    
             // Obtener formaciones con privacidad
             $formacionConPrivacidad = $perfilesModel->obtenerFormacionConPrivacidad($usuario_id);
     
             // Obtener estado civil con privacidad
             $estadoCivilConPrivacidad = $perfilesModel->obtenerEstadoCivilConPrivacidad($usuario_id);
-            //Obtener ubicación con privacidad
+    
+            // Obtener ubicación con privacidad
             $ubicacionConPrivacidad = $perfilesModel->obtenerUbicacionConPrivacidad($usuario_id);
-
+    
             // Comprobar si se obtuvieron los datos
             if ($datos_usuario) {
                 // Pasar los datos a la vista
                 $vista_cuerpo = BASE_PATH . '/views/miperfil_view.phtml'; 
             } else {
                 $mensaje = "No se encontraron datos para el usuario.";
-                // Aquí podrías redirigir a una página de error o mostrar un mensaje
             }
         } else {
             $mensaje = "Debes iniciar sesión para ver tu perfil.";
-            // Aquí podrías redirigir al inicio de sesión
         }
         break;
+    
     
     
 

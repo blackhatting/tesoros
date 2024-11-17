@@ -1,0 +1,44 @@
+======================================================================================
+ESPAÑOL
+======================================================================================
+LICENCIA PROPIETARIA
+
+Este código es propiedad exclusiva de [Borja Maiques Barbens] Alías [SOMBRERERO NEGRO]. Todos los derechos están reservados.
+
+CONDICIONES DE USO:
+
+1. No se permite copiar, modificar, distribuir ni hacer uso comercial de este código sin el permiso explícito del autor.
+
+2. Cualquier persona que desee colaborar o modificar el código debe ponerse en contacto con el autor a través de la siguiente dirección de correo electrónico: [borjamaiques@gmail.com].
+
+3. Si se desea usar este código para fines comerciales o en productos propios, se debe acordar una licencia con el autor antes de hacerlo.
+
+4. Cualquier colaboración en el código será bajo el mismo acuerdo, y se deberá obtener autorización del autor.
+
+El uso de este código implica la aceptación de estas condiciones.
+
+Fecha de última actualización: [01/11/2024]
+
+
+======================================================================================
+ENGLISH
+======================================================================================
+
+PROPRIETARY LICENSE
+
+This code is the exclusive property of [Borja Maiques Barbens] Alías [Sombrerero Negro]. All rights are reserved.
+
+CONDITIONS OF USE:
+
+1. Copying, modifying, distributing, or making commercial use of this code is not permitted without the explicit permission of the author.
+
+2. Any person wishing to collaborate or modify the code must contact the author via the following email: [borjamaiques@gmail.com].
+
+3. If you wish to use this code for commercial purposes or in your own products, you must agree to a license with the author before doing so.
+
+4. Any collaboration on the code will be under the same agreement, and permission from the author must be obtained.
+
+Using this code implies acceptance of these terms.
+
+Last updated: [01/11/2024]
+
